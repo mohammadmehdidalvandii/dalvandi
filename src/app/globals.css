@@ -22,20 +22,14 @@
 
   --color-background: #e8f0f8;
   --color-primary: #0a2e4a ;
+  --color-hover-100:#164267;
   --color-secondary-100: #0078d7;
   --color-secondary-200: #0063b1;
-  --color-shadows : rgba(0 ,120 , 215 ,0.2)
+  --color-shadows : rgba(0 ,120 , 215 ,0.2) ;
   --color-text-100: #333;
   --color-text-200: #555;
 
   --text-md:0.9rem;
-}
-body{
-  font-family: var(--font-light);
-  font-size: 1rem;
-  font-weight: 700;
-  box-sizing: border-box;
-  background-color: #e8f0f8 !important;
 }
 
 @utility container{
@@ -53,4 +47,18 @@ body{
   .linkActive{
     @apply font-roboto-bold text-base  text-secondary-100
   }
+  .btn_primary{
+    @apply flex justify-center items-center bg-primary text-white w-[120px] h-10 rounded-full duration-300 hover:bg-hover-100 hover:drop-shadow-xl hover:drop-shadow-shadows hover:-translate-y-1
+  }
+  .btn_secondary{
+    @apply  flex justify-center items-center border-2 border-primary text-primary w-[120px] h-10 rounded-full duration-300 hover:border-secondary-100 hover:text-secondary-100 hover:drop-shadow-xl hover:drop-shadow-shadows hover:-translate-y-1
+  }
+}
+
+body{
+  font-family: var(--font-light);
+  font-size: 1rem;
+  font-weight: 700;
+  box-sizing: border-box;
+  background-color: #e8f0f8 !important;
 }
