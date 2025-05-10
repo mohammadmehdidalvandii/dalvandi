@@ -16,15 +16,15 @@
 
 
 @theme{
-  --font-light: robotoLight;
-  --font-bold: robotoBold;
-  --font-black: robotoBlack
+  --font-roboto-light: robotoLight;
+  --font-roboto-bold: robotoBold;
+  --font-roboto-black: robotoBlack
 
   --color-background: #e8f0f8;
   --color-primary: #0a2e4a ;
   --color-secondary-100: #0078d7;
   --color-secondary-200: #0063b1;
-  --color-shadow : rgba(0 ,120 , 215 ,0.2)
+  --color-shadows : rgba(0 ,120 , 215 ,0.2)
   --color-text-100: #333;
   --color-text-200: #555;
 
@@ -37,6 +37,15 @@
   margin-left: auto;
   padding-right: 1rem;
   padding-left: 1rem;;
+}
+
+@layer components{
+  .link{
+    @apply font-roboto-bold text-base  duration-300 ease-in-out hover:text-secondary-100
+  }
+  .linkActive{
+    @apply font-roboto-bold text-base  text-secondary-100
+  }
 }
 
 body{
