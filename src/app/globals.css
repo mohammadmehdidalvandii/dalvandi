@@ -30,6 +30,13 @@
 
   --text-md:0.9rem;
 }
+body{
+  font-family: var(--font-light);
+  font-size: 1rem;
+  font-weight: 700;
+  box-sizing: border-box;
+  background-color: #e8f0f8 !important;
+}
 
 @utility container{
   max-width: 75rem;
@@ -46,11 +53,4 @@
   .linkActive{
     @apply font-roboto-bold text-base  text-secondary-100
   }
-}
-
-body{
-  font-family: var(--font-light);
-  font-size: 1rem;
-  font-weight: 700;
-  box-sizing: border-box;
 }
