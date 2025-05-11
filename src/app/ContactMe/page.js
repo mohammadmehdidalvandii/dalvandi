@@ -1,5 +1,6 @@
 import Footer from '@/components/modules/Footer/Footer'
 import Navbar from '@/components/modules/Navbar/Navbar'
+import Contact from '@/components/template/contactMe/Contact'
 import React from 'react'
 
 export const metadata = {
@@ -11,7 +12,7 @@ function page() {
   return (
     <>
     <Navbar/>
-
+    <Contact/>
     <Footer/>
     </>
   )

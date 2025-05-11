@@ -26,6 +26,7 @@
   --color-secondary-100: #0078d7;
   --color-secondary-200: #0063b1;
   --color-shadows : rgba(0 ,120 , 215 ,0.2) ;
+  --color-input: ##f0f6fc;
   --color-text-100: #333;
   --color-text-200: #555;
 
@@ -55,6 +56,18 @@
   }
   .title{
     @apply flex justify-center items-center font-roboto-black text-4xl font-black text-primary
+  }
+  .form_group{
+    @apply block mb-4
+  }
+  .form_label{
+    @apply block mb-2 font-roboto-light text-primary
+  }
+  .form_input{
+    @apply w-full h-10 bg-input border-1 border-secondary-100 rounded-sm outline-none pl-2 focus:border-secondary-200
+  }
+  .form_text{
+    @apply w-full h-20 bg-input border-1 border-secondary-100 rounded-sm  outline-none  pl-2 pt-2
   }
 }
 
