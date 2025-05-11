@@ -30,7 +30,7 @@ function Navbar() {
                 <Link href='/Projects' className={activeLink === '/Projects' ? 'link linkActive': 'link'}>Projects</Link>
               </li>
               <li>
-                <Link href='/Contact' className={activeLink === '/Content' ? 'link linkActive': 'link'} >Contact</Link>
+                <Link href='/ContactMe' className={activeLink === '/ContentMe' ? 'link linkActive': 'link'} >Contact</Link>
               </li>
             </ul>
         </nav>
