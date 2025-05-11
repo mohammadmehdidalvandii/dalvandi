@@ -1,3 +1,4 @@
+import Footer from '@/components/modules/Footer/Footer'
 import Navbar from '@/components/modules/Navbar/Navbar'
 import Feature from '@/components/template/home/Feature/Feature'
 import Hero from '@/components/template/home/Hero/Hero'
@@ -9,6 +10,7 @@ function Home() {
     <Navbar/>
     <Hero/>
     <Feature/>
+    <Footer/>
     </>
   )
 }
