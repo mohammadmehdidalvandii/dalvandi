@@ -1,5 +1,6 @@
 import Footer from '@/components/modules/Footer/Footer'
 import Navbar from '@/components/modules/Navbar/Navbar'
+import About from '@/components/template/aboutme/About/About'
 import React from 'react'
 
 export const metadata = {
@@ -11,7 +12,7 @@ function page() {
   return (
     <>
     <Navbar/>
-
+    <About/>
     <Footer/>
     </>
   )
