@@ -1,7 +1,18 @@
+"use client"
 import Link from 'next/link'
-import React from 'react'
+import React, { useEffect, useState } from 'react'
+import { usePathname } from 'next/navigation'
 
 function Navbar() {
+  const [activeLink , setActiveLink] = useState('/');
+  const pathName = usePathname();
+
+  useEffect(()=>{
+    const location = pathName
+    setActiveLink(location)
+  },[pathName])
+
+
   return (
     <section className="block bg-primary drop-shadow-md drop-shadow-shadows text-white">
         <nav className="flex flex-col sm:flex-row justify-between items-center p-6">
@@ -10,16 +21,16 @@ function Navbar() {
             </span>
             <ul className="flex gap-3 sm:gap-6 ">
               <li>
-                <Link href='/Home' className='link linkActive'>Home</Link>
+                <Link href='/' className={activeLink === '/' ? 'link linkActive': 'link'}>Home</Link>
               </li>
               <li>
-                <Link href='/AboutMe' className='link' >About Me</Link>
+                <Link href='/AboutMe' className={activeLink === '/AboutMe' ? 'link linkActive': 'link'} >About Me</Link>
               </li>
               <li>
-                <Link href='/Projects' className='link' >Projects</Link>
+                <Link href='/Projects' className={activeLink === '/Projects' ? 'link linkActive': 'link'}>Projects</Link>
               </li>
               <li>
-                <Link href='/Contact' className='link' >Contact</Link>
+                <Link href='/Contact' className={activeLink === '/Content' ? 'link linkActive': 'link'} >Contact</Link>
               </li>
             </ul>
         </nav>
