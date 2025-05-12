@@ -69,6 +69,15 @@
   .form_text{
     @apply w-full h-20 bg-input border-1 border-secondary-100 rounded-sm  outline-none  pl-2 pt-2
   }
+  .admin_link{
+    @apply flex items-center gap-3 font-roboto-bold text-lg
+  }
+  .admin_item{
+    @apply block mb-4 hover:bg-secondary-100 hover:w-full p-2 hover:rounded-sm hover:border-l-3 hover:border-white
+  }
+  .admin_linkActive{
+    @apply bg-secondary-100 w-full  rounded-sm border-l-3 border-white mb-4
+  }
 }
 
 body{
