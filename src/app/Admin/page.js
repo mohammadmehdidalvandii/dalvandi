@@ -1,4 +1,5 @@
 import AdminLayout from '@/components/layout/AdminLayout'
+import Stats from '@/components/template/admin/Stats/Stats'
 import React from 'react'
 
 
@@ -10,7 +11,7 @@ export const metadata = {
 function page() {
   return (
     <AdminLayout>
-        this admin page
+        <Stats/>
     </AdminLayout>
   )
 }

@@ -78,6 +78,9 @@
   .admin_linkActive{
     @apply bg-secondary-100 w-full  rounded-sm border-l-3 border-white mb-4
   }
+  .admin_box{
+    @apply block bg-white rounded-md p-4 mb-6
+  }
 }
 
 body{
