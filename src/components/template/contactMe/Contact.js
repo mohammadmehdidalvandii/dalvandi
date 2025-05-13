@@ -47,7 +47,7 @@ function Contact() {
                             <label htmlFor="" className='form_label'>Message:</label>
                             <textarea rows={7} className='form_text' type="text" />
                         </div>
-                        <button className="btn_primary w-[140px] bg-secondary-100 hover:secondary-200 rounded-md">Send Message</button>
+                        <button className="btn_success">Send Message</button>
                     </form>
                 </div>
             </div>

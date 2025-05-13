@@ -17,7 +17,7 @@ function ProjectCart() {
                 <li className="flex justify-center items-center bg-primary rounded-lg text-sm py-2  px-3 text-white">node.js</li>
                 <li className="flex justify-center items-center bg-primary rounded-lg text-sm py-2  px-3 text-white">node.js</li>
             </ul>
-            <Link href='' className='btn_primary rounded-md bg-secondary-100 hover:bg-secondary-200 mt-4'>View Project</Link>
+            <Link href='' className='btn_success mt-3'>View Project</Link>
         </div>
     </div>
   )
