@@ -44,27 +44,27 @@ function Sidebar() {
             </li>
             <li className={activeMen === '/Admin/Projects' ? "admin_item admin_linkActive" :"admin_item"}>
                 <Link href='/Admin/Projects' className='admin_link'> 
-                <span className="/Admin/Projects"><FaDiagramProject/></span>
+                <span><FaDiagramProject/></span>
                 Projects</Link>
             </li>
             <li className={activeMen === '/Admin/Skills' ? "admin_item admin_linkActive" :"admin_item"}>
                 <Link href='/Admin/Skills' className='admin_link'> 
-                <span className="/Admin/Skills"><FaTools/></span>
+                <span ><FaTools/></span>
                 Skills</Link>
             </li>
             <li className={activeMen === '/Admin/Resume' ? "admin_item admin_linkActive" :"admin_item"}>
-                <Link href='/Admin/Skills' className='admin_link'> 
-                <span className="/Admin/Skills"><FaFileLines /></span>
+                <Link href='/Admin/Resume' className='admin_link'> 
+                <span><FaFileLines /></span>
                 Resume</Link>
             </li>
             <li className={activeMen === '/Admin/Message' ? "admin_item admin_linkActive" :"admin_item"}>
-                <Link href='' className='admin_link'> 
-                <span className="/Admin/Message"><FaMessage/></span>
+                <Link href='/Admin/Message' className='admin_link'> 
+                <span><FaMessage/></span>
                 Message</Link>
             </li>
             <li className={activeMen === '/Admin/Setting' ? "admin_item admin_linkActive" :"admin_item"}>
                 <Link href='/Admin/Setting' className='admin_link'> 
-                <span className=""><IoSettings/></span>
+                <span ><IoSettings/></span>
                 Setting</Link>
             </li>
         </ul>
@@ -99,22 +99,22 @@ function Sidebar() {
             </li>
             <li className={activeMen === '/Admin/Skills' ? "admin_item admin_linkActive" :"admin_item"}>
                 <Link href='/Admin/Skills' className='admin_link'> 
-                <span className="/Admin/Skills"><FaTools/></span>
+                <span><FaTools/></span>
                 Skills</Link>
             </li>
             <li className={activeMen === '/Admin/Resume' ? "admin_item admin_linkActive" :"admin_item"}>
                 <Link href='/Admin/Resume' className='admin_link'> 
-                <span className="/Admin/Resume"><FaFileLines /></span>
+                <span><FaFileLines /></span>
                 Resume</Link>
             </li>
             <li className={activeMen === '/Admin/Message' ? "admin_item admin_linkActive" :"admin_item"}>
                 <Link href='/Admin/Message' className='admin_link'> 
-                <span className="/Admin/Message"><FaMessage/></span>
+                <span ><FaMessage/></span>
                 Message</Link>
             </li>
             <li className={activeMen === '/Admin/Setting' ? "admin_item admin_linkActive" :"admin_item"}>
                 <Link href='/Admin/Setting' className='admin_link'> 
-                <span className=""><IoSettings/></span>
+                <span ><IoSettings/></span>
                 Setting</Link>
             </li>
         </ul>
