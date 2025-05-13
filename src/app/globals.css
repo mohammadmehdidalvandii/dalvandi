@@ -57,6 +57,9 @@
   .btn_success{
         @apply flex justify-center items-center bg-secondary-100 text-white w-[120px] h-10 rounded-md duration-300 hover:bg-secondary-200 hover:drop-shadow-xl hover:drop-shadow-shadows hover:-translate-y-1
   }
+  .btn_cancel{
+    @apply flex justify-center items-center border-2 border-red-400 text-red-500  w-[120px] h-10 rounded-md duration-300 hover:bg-red-500  hover:text-white hover:drop-shadow-xl hover:drop-shadow-shadows hover:-translate-y-1
+  }
   .title{
     @apply flex justify-center items-center font-roboto-black text-4xl font-black text-primary
   }
@@ -83,6 +86,12 @@
   }
   .admin_box{
     @apply block bg-white rounded-md p-4 mb-6
+  }
+  .box_model{
+    @apply block bg-white  md:max-w-[600px] mx-auto mt-12 p-4 rounded-md
+  }
+  .box_shadow{
+    @apply bg-black/50 w-full p-4 h-screen fixed z-70 left-0 bottom-0
   }
 }
 

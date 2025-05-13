@@ -29,8 +29,8 @@ function SkillsManagement() {
                 <SkillCart/>
         </div>
         {skills && (
-            <div className="bg-black/50 w-full p-4 h-screen fixed z-70 left-0 bottom-0">
-                <div className="block bg-white  md:max-w-[600px] mx-auto mt-12 p-4 rounded-md">
+            <div className="box_shadow">
+                <div className="box_model">
                       <h6 className="block font-roboto-bold text-primary">Edit Project</h6>
                 <form action="#" className="block mt-4">
                     <div className="form_group">
@@ -38,7 +38,7 @@ function SkillsManagement() {
                             <input type="text" className='form_input'/>
                        </div>
                        <div className="flex gap-4 mt-4 flex-wrap *:cursor-pointer">
-                        <button className='btn_secondary rounded-md border-red-400 text-red-500 hover:text-white hover:bg-red-500'
+                        <button className='btn_cancel'
                         onClick={handlerExitSkills}
                         >Cancel</button>
                         <button className='btn_success'>Add Skill</button>
