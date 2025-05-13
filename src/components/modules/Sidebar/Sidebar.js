@@ -77,8 +77,8 @@ function Sidebar() {
                 <HiMiniBars3CenterLeft/>
             </span>
             {menu && (
-                  <div className="bg-black/50 w-full h-screen fixed left-0 bottom-0">
-                <div className="block bg-primary  w-[300px] z-10 p-4 h-screen">
+                  <div className="bg-black/50 w-full h-screen fixed z-70 left-0 bottom-0">
+                <div className="block bg-primary  w-[300px] z-90 p-4 h-screen">
                     <span className="flex items-center justify-center text-2xl w-10 h-10 bg-secondary-100 rounded-[50%] cursor-pointer duration-300 hover:bg-secondary-200"
                         onClick={handlerExitMenu}
                     >
