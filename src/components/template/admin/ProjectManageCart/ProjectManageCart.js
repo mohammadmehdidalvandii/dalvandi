@@ -1,10 +1,11 @@
 import Image from 'next/image'
-import React from 'react'
 import { FaRegEdit } from "react-icons/fa";
 import { MdDelete } from "react-icons/md";
 
 
-function ProjectManageCart() {
+function ProjectManageCart({handlerShowEdit }) {
+
+ 
   return (
     <div className=' block bg-white drop-shadow-md rounded-sm overflow-hidden duration-300 hover:-translate-y-2 relative  select-none'>
         <Image src='/assets/images/project.avif' alt='project image' width={200} height={200} className='w-full'/>
@@ -12,7 +13,9 @@ function ProjectManageCart() {
             *:flex *:justify-center *:items-center *w-10 *:h-10 *:px-2 *:rounded-[50%] *:bg-primary *:text-white *:text-lg
             *:duration-300  *:hover:bg-secondary-200 *:cursor-pointer 
                     ">
-            <button>
+            <button 
+            onClick={handlerShowEdit}
+            >
                 <FaRegEdit/>
             </button>
             <button>
@@ -31,6 +34,7 @@ function ProjectManageCart() {
                 <li className="flex justify-center items-center bg-primary rounded-lg text-sm py-2  px-3 text-white">node.js</li>
             </ul>
         </div>
+     
     </div>
   )
 }
