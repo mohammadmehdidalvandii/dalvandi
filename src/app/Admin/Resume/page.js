@@ -1,4 +1,5 @@
 import AdminLayout from '@/components/layout/AdminLayout'
+import ResumeManagement from '@/components/template/admin/ResumeManagement/ResumeManagement'
 import React from 'react'
 
 export const metadata = {
@@ -9,7 +10,7 @@ export const metadata = {
 function page() {
   return (
     <AdminLayout>
-        THIS IS Resume page
+       <ResumeManagement/>
     </AdminLayout>
   )
 }
