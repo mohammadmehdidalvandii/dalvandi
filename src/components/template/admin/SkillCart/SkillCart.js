@@ -11,7 +11,6 @@ function SkillCart() {
             <div className="flex items-center gap-4 *:flex *:justify-center *:items-center *:rounded-[50%] *:text-white *:cursor-pointer *:w-8 *:h-8 *:bg-primary
             *:duration-300 *:hover:bg-secondary-100
             ">
-                <button><FaRegEdit/></button>
                 <button><MdDelete/></button>
             </div>
         </div>
