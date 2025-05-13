@@ -1,4 +1,5 @@
 import AdminLayout from '@/components/layout/AdminLayout'
+import ProjectManagement from '@/components/template/admin/ProjectManagement/ProjectManagement'
 import React from 'react'
 
 export const metadata = {
@@ -9,7 +10,7 @@ export const metadata = {
 function page() {
   return (
     <AdminLayout>
-        this is admin project
+        <ProjectManagement/>
     </AdminLayout>
   )
 }
