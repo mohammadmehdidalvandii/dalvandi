@@ -43,18 +43,18 @@ function Sidebar() {
                 Dashboard</Link>
             </li>
             <li className={activeMen === '/Admin/Projects' ? "admin_item admin_linkActive" :"admin_item"}>
-                <Link href='' className='admin_link'> 
+                <Link href='/Admin/Projects' className='admin_link'> 
                 <span className="/Admin/Projects"><FaDiagramProject/></span>
                 Projects</Link>
             </li>
             <li className={activeMen === '/Admin/Skills' ? "admin_item admin_linkActive" :"admin_item"}>
-                <Link href='' className='admin_link'> 
+                <Link href='/Admin/Skills' className='admin_link'> 
                 <span className="/Admin/Skills"><FaTools/></span>
                 Skills</Link>
             </li>
             <li className={activeMen === '/Admin/Resume' ? "admin_item admin_linkActive" :"admin_item"}>
-                <Link href='' className='admin_link'> 
-                <span className="/Admin/Resume"><FaFileLines /></span>
+                <Link href='/Admin/Skills' className='admin_link'> 
+                <span className="/Admin/Skills"><FaFileLines /></span>
                 Resume</Link>
             </li>
             <li className={activeMen === '/Admin/Message' ? "admin_item admin_linkActive" :"admin_item"}>
@@ -93,22 +93,22 @@ function Sidebar() {
                 Dashboard</Link>
             </li>
             <li className={activeMen === '/Admin/Projects' ? "admin_item admin_linkActive" :"admin_item"}>
-                <Link href='' className='admin_link'> 
+                <Link href='/Admin/Projects' className='admin_link'> 
                 <span className="/Admin/Projects"><FaDiagramProject/></span>
                 Projects</Link>
             </li>
             <li className={activeMen === '/Admin/Skills' ? "admin_item admin_linkActive" :"admin_item"}>
-                <Link href='' className='admin_link'> 
+                <Link href='/Admin/Skills' className='admin_link'> 
                 <span className="/Admin/Skills"><FaTools/></span>
                 Skills</Link>
             </li>
             <li className={activeMen === '/Admin/Resume' ? "admin_item admin_linkActive" :"admin_item"}>
-                <Link href='' className='admin_link'> 
+                <Link href='/Admin/Resume' className='admin_link'> 
                 <span className="/Admin/Resume"><FaFileLines /></span>
                 Resume</Link>
             </li>
             <li className={activeMen === '/Admin/Message' ? "admin_item admin_linkActive" :"admin_item"}>
-                <Link href='' className='admin_link'> 
+                <Link href='/Admin/Message' className='admin_link'> 
                 <span className="/Admin/Message"><FaMessage/></span>
                 Message</Link>
             </li>
