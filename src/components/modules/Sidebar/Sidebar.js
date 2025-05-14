@@ -62,8 +62,8 @@ function Sidebar() {
                 <span><FaMessage/></span>
                 Message</Link>
             </li>
-            <li className={activeMen === '/Admin/Setting' ? "admin_item admin_linkActive" :"admin_item"}>
-                <Link href='/Admin/Setting' className='admin_link'> 
+            <li className={activeMen === '/Admin/Settings' ? "admin_item admin_linkActive" :"admin_item"}>
+                <Link href='/Admin/Settings' className='admin_link'> 
                 <span ><IoSettings/></span>
                 Setting</Link>
             </li>
@@ -112,8 +112,8 @@ function Sidebar() {
                 <span ><FaMessage/></span>
                 Message</Link>
             </li>
-            <li className={activeMen === '/Admin/Setting' ? "admin_item admin_linkActive" :"admin_item"}>
-                <Link href='/Admin/Setting' className='admin_link'> 
+            <li className={activeMen === '/Admin/Settings' ? "admin_item admin_linkActive" :"admin_item"}>
+                <Link href='/Admin/Settings' className='admin_link'> 
                 <span ><IoSettings/></span>
                 Setting</Link>
             </li>
