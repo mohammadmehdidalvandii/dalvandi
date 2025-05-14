@@ -6,7 +6,16 @@ import { MdDelete } from "react-icons/md";
 function ResumeManagement() {
     const [experience , setExperience] = useState(false);
     const [uploadResume , setUploadResume] = useState(false);
+    const [editExperience , setEditExperience] = useState(false);
 
+
+    // Model for Edit Experience
+    const handlerShowEditExperience = ()=>{
+        setEditExperience(true)
+    }
+    const handlerExitEditExperience = ()=>{
+        setEditExperience(false)
+    }
     // Model for experience
     const handlerShowExperience = ()=>{
         setExperience(true);
@@ -51,7 +60,9 @@ function ResumeManagement() {
                     <p className="block font-roboto-bold text-md mt-2">Work Experience .....</p>
                     <div className="flex items-center mt-4 gap-3 *:flex *:justify-center *:items-center *:font-roboto-light *:text-md *:text-text-100 *:bg-primary *:w-8 *:h-8  *:rounded-[50%]
                     *:text-white *:duration-300 *:hover:bg-secondary-100 *:cursor-pointer">
-                        <button><FaRegEdit/></button>
+                        <button
+                        onClick={handlerShowEditExperience}
+                        ><FaRegEdit/></button>
                         <button><MdDelete/></button>
                     </div>
                 </div>
@@ -108,6 +119,43 @@ function ResumeManagement() {
                         onClick={handlerExitResume}
                         >Cancel</button>
                         <button className='btn_success w-[150px]'>Upload Resume</button>
+                       </div>
+                </form>
+                </div>
+            </div>
+        )}
+
+        {editExperience && (
+               <div className="box_shadow">
+                <div className="box_model">
+                         <h6 className="block font-roboto-bold text-primary">Edit Work Experience</h6>
+                <form action="#" className="block mt-4">
+                    <div className="form_group">
+                            <label htmlFor="" className='form_label'>Job Title:</label>
+                            <input type="text" className='form_input'/>
+                       </div>
+                   
+                    <div className="form_group">
+                            <label htmlFor="" className='form_label'>Company:</label>
+                            <input type="type" className='form_input'/>
+                       </div>
+                    <div className="form_group">
+                            <label htmlFor="" className='form_label'>Start Date</label>
+                            <input type="date" className='form_input' />
+                       </div>
+                    <div className="form_group">
+                            <label htmlFor="" className='form_label'>End Date:</label>
+                            <input type="date" className='form_input'/>
+                       </div>
+                        <div className="form_group">
+                            <label htmlFor="" className='form_label'>Responsibilities:</label>
+                            <textarea type="text" className='form_text'/>
+                       </div>
+                       <div className="flex gap-4 mt-4 flex-wrap *:cursor-pointer">
+                        <button className='btn_cancel'
+                        onClick={handlerExitEditExperience}
+                        >Cancel</button>
+                        <button className='btn_success w-[150px]'>Add Experience</button>
                        </div>
                 </form>
                 </div>
