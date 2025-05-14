@@ -28,7 +28,7 @@ function Sidebar() {
     },[pathname])
 
   return (
-    <section className="p-4 bg-primary  lg:h-screen text-white">
+    <section className="p-4 bg-primary lg:h-screen text-white sticky top-0 z-90">
         <div className="hidden lg:block">
                 <div className="flex flex-col justify-center items-center ">
             <Image src='/assets/images/user.png' alt='user admin' width={120} height={120} className='rounded-[50%] border-5 border-secondary-200'/>

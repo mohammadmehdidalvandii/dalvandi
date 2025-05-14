@@ -31,7 +31,7 @@ function ProjectManagement() {
             onClick={handlerShowModel}
             >+ AddProject</button>
         </div>
-        <div className="block lg:h-[490px] lg:overflow-y-auto mt-8">
+        <div className="block mt-8">
         <div className="grid gap-6 grid-cols-1 sm:grid-cols-2 md:grid-cols-3 ">
             <ProjectManageCart
             handlerShowEdit={handlerShowEdit}

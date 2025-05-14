@@ -7,8 +7,8 @@ import HeaderAdmin from '../modules/HeaderAdmin/HeaderAdmin'
 function AdminLayout({children}) {
   return (
     <section className="block">
-        <div className="grid lg:grid-cols-6">
-            <div>
+        <div className="grid lg:grid-cols-6 ">
+            <div className=''>
                 <Sidebar/>
             </div>
             <div className='m-2 lg:col-span-5'>

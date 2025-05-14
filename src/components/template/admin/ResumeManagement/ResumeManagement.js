@@ -47,7 +47,6 @@ function ResumeManagement() {
         </div>
         <div className="block 
          p-4 bg-white drop-shadow-md rounded-sm mt-8
-         lg:h-[490px] lg:overflow-y-auto
         ">
             <h6 className="block font-roboto-bold text-lg">Work Experience</h6>
             <div className="grid grid-cols-1 gap-4 sm:grid-cols-2  lg:grid-cols-3 mt-4">
