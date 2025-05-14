@@ -1,4 +1,5 @@
 import AdminLayout from '@/components/layout/AdminLayout'
+import Message from '@/components/template/admin/Message/Message'
 import React from 'react'
 
 export const metadata = {
@@ -10,7 +11,7 @@ export const metadata = {
 function page() {
   return (
     <AdminLayout>
-        this is Message page
+        <Message/>
     </AdminLayout>
   )
 }
