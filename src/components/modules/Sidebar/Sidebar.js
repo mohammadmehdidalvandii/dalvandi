@@ -57,8 +57,8 @@ function Sidebar() {
                 <span><FaFileLines /></span>
                 Resume</Link>
             </li>
-            <li className={activeMen === '/Admin/Message' ? "admin_item admin_linkActive" :"admin_item"}>
-                <Link href='/Admin/Message' className='admin_link'> 
+            <li className={activeMen === '/Admin/Messages' ? "admin_item admin_linkActive" :"admin_item"}>
+                <Link href='/Admin/Messages' className='admin_link'> 
                 <span><FaMessage/></span>
                 Message</Link>
             </li>
@@ -107,8 +107,8 @@ function Sidebar() {
                 <span><FaFileLines /></span>
                 Resume</Link>
             </li>
-            <li className={activeMen === '/Admin/Message' ? "admin_item admin_linkActive" :"admin_item"}>
-                <Link href='/Admin/Message' className='admin_link'> 
+            <li className={activeMen === '/Admin/Messages' ? "admin_item admin_linkActive" :"admin_item"}>
+                <Link href='/Admin/Messages' className='admin_link'> 
                 <span ><FaMessage/></span>
                 Message</Link>
             </li>
