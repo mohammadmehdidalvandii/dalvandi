@@ -23,7 +23,7 @@ const verifyAccessToken = (token)=>{
         throw new Error("Access token secret is not defined in environment variable")
     };
     try{
-        const tokenPayload = verify(token , securityCodeAccess);
+        const tokenPayload = verify(token , securityCodeAccess , {expiresIn:'1h'});
         return tokenPayload
     }
     catch(error){
@@ -38,7 +38,7 @@ const generateRefreshToken = (data)=>{
         throw new Error("Refresh token secret is not defined in environment variable")
     };
     try{
-        const token = sign(data , securityCodeRefreshToken);
+        const token = sign(data , securityCodeRefreshToken ,{expiresIn:'10d'});
         return token
     }
     catch(error){
