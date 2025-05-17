@@ -6,6 +6,14 @@ export async function POST(req) {
     const body = await req.json();
     const {name} = body;
 
+    const isExistSkill = await skillsModel.findOne({name});
+    if(isExistSkill){
+        return Response.json(
+            {message:"Skill is already exists"},
+            {status:422}
+        )
+    }
+
     const newSkill = await skillsModel.create({name});
     if(newSkill){
         return Response.json(
