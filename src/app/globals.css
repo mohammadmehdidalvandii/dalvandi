@@ -101,4 +101,5 @@ body{
   font-weight: 700;
   box-sizing: border-box;
   background-color: #e8f0f8 !important;
+  position: relative;
 }
