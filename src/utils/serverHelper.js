@@ -11,10 +11,12 @@ const authUser  =  async ()=>{
         const tokenPayload = verifyRefreshToken(token.value);
         user = await UserModel.findOne({email:tokenPayload.email});
     }
+
+    return user
 };
 
 
 module.exports = {
     authUser,
-    
+
 }
