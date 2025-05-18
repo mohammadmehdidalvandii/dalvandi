@@ -11,17 +11,20 @@ const schema = new mongoose.Schema({
         required:true,
     },
     startDate:{
-        type:Number,
+        type:String,
         required:true
     },
     endDate:{
-        type:Number,
+        type:String,
         required:true,
     },
     responsibilities:{
         type:String,
         required:true,
     }
+},
+{
+    timestamps:true,
 });
 
 const model  = mongoose.models.Work || mongoose.model("Work" ,schema);
