@@ -7,8 +7,8 @@ const schema = new mongoose.Schema({
         type: mongoose.Types.ObjectId,
         ref:'User'
     },
-    data:{
-        type:[String],
+    action:{
+        type:String,
     }
 },{
     timestamps:true,

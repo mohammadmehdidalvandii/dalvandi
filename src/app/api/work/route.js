@@ -1,9 +1,19 @@
 const connectToDB = require('@/config/db');
 const workModel = require('@/models/Work');
+const ActivityModel = require('@/models/Activities');
+const {authUser} = require('@/src/utils/serverHelper');
+
  
 export async function POST(req){
     try{
         connectToDB()
+                const user = await authUser();
+                if(!user) {
+                    return Response.json(
+                        {message: "Unauthorized"},
+                        {status: 401}
+                    );
+                }
         const body = await req.json();
         const {job , company , startDate , endDate , responsibilities} = body;
 
@@ -22,6 +32,10 @@ export async function POST(req){
             endDate,
             responsibilities,   
         });
+         await ActivityModel.create({
+                    UserID: user._id,
+                    action: `create new Experience : ${newWork.job}`
+                });
 
         if(newWork){
             return Response.json(

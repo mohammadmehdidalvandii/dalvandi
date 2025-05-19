@@ -1,9 +1,20 @@
 const connectToDB = require('@/config/db');
 const ContentModel = require('@/models/Content');
+const ActivityModel = require('@/models/Activities');
+const {authUser} = require('@/src/utils/serverHelper');
 
 export async function POST (req){
     try{
         connectToDB();
+
+           const user = await authUser();
+                if(!user) {
+                    return Response.json(
+                        {message: "Unauthorized"},
+                        {status: 401}
+                    );
+                }
+
         const body = await req.json();
         const {titleHomePage , descriptionHomePage , bioAboutPage , githubLink , linkedinLink , telegramLink} = body;
 
@@ -15,6 +26,11 @@ export async function POST (req){
             linkedinLink ,
             telegramLink ,
         });
+
+            await ActivityModel.create({
+                    UserID: user._id,
+                    action: `created Content all page`
+                });
 
         if(content){
             return Response.json(
