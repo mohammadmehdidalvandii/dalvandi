@@ -55,6 +55,11 @@ export async function POST (req ){
                 {message:"new Projects created " , data:newProject},
                 {status:201},
             )
+        }else{
+            return Response.json(
+                {message:"create project failed"},
+                {status:400}
+            )
         }
     }
     catch(error){

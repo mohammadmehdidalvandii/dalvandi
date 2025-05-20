@@ -1,9 +1,22 @@
 const connectToDB = require('@/config/db');
 const ProjectModel = require('@/models/Projects');
+const {authUser} = require('@/src/utils/serverHelper');
+
 
 export async function DELETE (req , {params}){
     try{
         connectToDB();
+
+             const user = await authUser();
+                        if(!user) {
+                            return Response.json(
+                                {message: "Unauthorized"},
+                                {status: 401}
+                            );
+                        }
+                    
+
+
         const projectID = params?.id;
 
         if(!projectID){

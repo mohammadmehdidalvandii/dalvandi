@@ -2,10 +2,22 @@ const connectToDB = require('@/config/db');
 const ProjectModel = require('@/models/Projects');
 const {writeFile} = require('fs/promises')
 const path = require('path')
+const {authUser} = require('@/src/utils/serverHelper');
+
 
 export async function PUT (req , {params}){
     try{
         connectToDB();
+
+          const user = await authUser();
+                if(!user) {
+                    return Response.json(
+                        {message: "Unauthorized"},
+                        {status: 401}
+                    );
+                }
+            
+
         const projectID = params?.id;
 
          const formData = await req.formData();
