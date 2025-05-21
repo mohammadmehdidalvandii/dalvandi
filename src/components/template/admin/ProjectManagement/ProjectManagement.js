@@ -2,7 +2,7 @@
 import React, { useState } from 'react'
 import ProjectManageCart from '../ProjectManageCart/ProjectManageCart'
 
-function ProjectManagement() {
+function ProjectManagement({projects}) {
   const [projectModel , setProjectModel] = useState(false);
    const [editProject , setEditProject] = useState(false); 
 
@@ -33,22 +33,23 @@ function ProjectManagement() {
         </div>
         <div className="block mt-8">
         <div className="grid gap-6 grid-cols-1 sm:grid-cols-2 md:grid-cols-3 ">
-            <ProjectManageCart
+          {projects.length > 0 ? (
+            projects.map((project, index) =>(
+              <ProjectManageCart
+              key={project._id}
+              id={project._id}
+              image={project.image}
+              name={project.name}
+              description={project.description}
+              tags={project.tags}
             handlerShowEdit={handlerShowEdit}
             handlerExitEditProject={handlerExitEditProject}
             />
-            <ProjectManageCart
-            handlerShowEdit={handlerShowEdit}
-            handlerExitEditProject={handlerExitEditProject}
-            />
-            <ProjectManageCart
-            handlerShowEdit={handlerShowEdit}
-            handlerExitEditProject={handlerExitEditProject}
-            />
-            <ProjectManageCart
-            handlerShowEdit={handlerShowEdit}
-            handlerExitEditProject={handlerExitEditProject}
-            />
+
+             ) )
+          ):(
+            <span className='block text-center font-roboto-black text-xl text-red-600'>There is no Projects.</span>
+          )}
         </div>
         </div>
         {/* Project add model */}

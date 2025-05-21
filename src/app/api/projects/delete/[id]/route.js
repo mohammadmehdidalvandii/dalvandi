@@ -6,7 +6,7 @@ const {authUser} = require('@/src/utils/serverHelper');
 
 export async function DELETE (req , {params}){
     try{
-        connectToDB();
+       await  connectToDB();
 
              const user = await authUser();
                         if(!user) {
@@ -18,8 +18,8 @@ export async function DELETE (req , {params}){
                     
 
 
-        const projectID = params?.id;
-
+        const projectID =  params?.id;
+                        console.log("id" , projectID)
         const project = await ProjectModel.findOne({_id:projectID})
 
         if(!projectID){
