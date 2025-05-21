@@ -28,7 +28,7 @@ export async function POST(req){
         if(!isCorrectPassword){
             return Response.json(
                 {message:"Email or Password is not correct"},
-                {status:401}
+                {status:422}
             )
         };
 
@@ -36,7 +36,7 @@ export async function POST(req){
             if(!isValidPassword){
                   return Response.json(
                 {message:"Email or Password is not correct"},
-                {status:401}
+                {status:422}
             )
             }
         
