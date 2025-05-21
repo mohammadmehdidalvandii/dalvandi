@@ -10,7 +10,7 @@ import { HiMiniBars3CenterLeft } from "react-icons/hi2";
 import { usePathname } from 'next/navigation';
 
 
-function Sidebar() {
+function Sidebar({user}) {
     const [activeMen , setActiveMenu] = useState('/Admin');
     const [menu , setMenu] = useState(false);
     const pathname = usePathname();
@@ -32,7 +32,7 @@ function Sidebar() {
         <div className="hidden lg:block">
                 <div className="flex flex-col justify-center items-center ">
             <Image src='/assets/images/user.png' alt='user admin' width={120} height={120} className='rounded-[50%] border-5 border-secondary-200'/>
-            <h5 className="block font-roboto-bold  text-xl mt-6">User Admin</h5>
+            <h5 className="block font-roboto-bold  text-xl mt-6">{user}</h5>
             </div>
         <ul className="block mt-8">
             <li className={activeMen === '/Admin' ? "admin_item admin_linkActive" :"admin_item"}>

@@ -20,10 +20,10 @@ async function AdminLayout({children}) {
     <section className="block">
         <div className="grid lg:grid-cols-6 ">
             <div className=''>
-                <Sidebar/>
+                <Sidebar user={user?.fullName}/>
             </div>
             <div className='m-2 lg:col-span-5'>
-              <HeaderAdmin/>
+              <HeaderAdmin fullName={user?.fullName}/>
                 {children}
             </div>
         </div>
