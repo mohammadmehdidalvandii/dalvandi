@@ -1,10 +1,21 @@
 import React from 'react'
 import Sidebar from '../modules/Sidebar/Sidebar'
 import HeaderAdmin from '../modules/HeaderAdmin/HeaderAdmin'
+import { authAdmin } from '@/utils/serverHelper'
+import { redirect } from 'next/navigation';
 
 
+async function AdminLayout({children}) {
+  
+  const user  = await authAdmin();
+  if(user){
+    if(user.role === "ADMIN"){
+      return redirect('/Login')
+    }
+  }else{
+    return redirect('/Login')
+  }
 
-function AdminLayout({children}) {
   return (
     <section className="block">
         <div className="grid lg:grid-cols-6 ">
