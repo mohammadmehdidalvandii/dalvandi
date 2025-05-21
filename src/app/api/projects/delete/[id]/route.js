@@ -1,5 +1,6 @@
 const connectToDB = require('@/config/db');
 const ProjectModel = require('@/models/Projects');
+const ActivityModel = require('@/models/Activities');
 const {authUser} = require('@/src/utils/serverHelper');
 
 
@@ -19,6 +20,8 @@ export async function DELETE (req , {params}){
 
         const projectID = params?.id;
 
+        const project = await ProjectModel.findOne({_id:projectID})
+
         if(!projectID){
             return Response.json(
                 {message :"ProjectID is required"},
@@ -26,6 +29,12 @@ export async function DELETE (req , {params}){
             )
         }else{
             await ProjectModel.findOneAndDelete({_id:projectID});
+
+            await ActivityModel.create({
+                userID:user._id,
+                action:`Delete Project ${project.name}`
+            })
+
             return Response.json(
                 {message:"Removed ProjectID successfully"},
                 {status:200}

@@ -1,5 +1,6 @@
 const connectToDB = require('@/config/db');
 const ProjectModel = require('@/models/Projects');
+const ActivityModel = require('@/models/Activities');
 const {writeFile} = require('fs/promises')
 const path = require('path')
 const {authUser} = require('@/src/utils/serverHelper');
@@ -50,6 +51,10 @@ export async function PUT (req , {params}){
                 },
                 {new:true}
             )
+            await ActivityModel.create({
+                userID:user._id,
+                action:`Update Project ${update.name}`,
+            })
             if(!update){
                 return  Response.json(
                     {message:"project update failed"},
