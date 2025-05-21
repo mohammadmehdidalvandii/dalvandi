@@ -3,7 +3,7 @@ import Link from 'next/link'
 import React, { useEffect, useState } from 'react'
 import { usePathname } from 'next/navigation'
 
-function Navbar() {
+function Navbar({isAdmin}) {
   const [activeLink , setActiveLink] = useState('/');
   const pathName = usePathname();
 
@@ -32,6 +32,11 @@ function Navbar() {
               <li>
                 <Link href='/ContactMe' className={activeLink === '/ContactMe' ? 'link linkActive': 'link'} >Contact</Link>
               </li>
+              {isAdmin && (
+              <li>
+                <Link href='/Admin' className={activeLink === '/Admin' ? 'link linkActive': 'link'} >Admin-panel</Link>
+              </li>
+              )}
             </ul>
         </nav>
     </section>
