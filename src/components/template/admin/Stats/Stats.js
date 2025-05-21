@@ -3,7 +3,7 @@ import { FaRegEye } from "react-icons/fa";
 import { FaDiagramProject , FaMessage  , FaDownload  } from "react-icons/fa6";
 
 
-function Stats() {
+function Stats({projects , messages}) {
   return (
     <section className="admin_box py-6">
         <div className="grid gap-4 sm:grid-cols-2 md:gird-cols-3  lg:grid-cols-4
@@ -26,7 +26,7 @@ function Stats() {
                     <span className='flex justify-center items-center w-12 h-12 bg-primary text-white text-2xl rounded-md'><FaDiagramProject/></span>
                     <div className="block">
                         <span className='block font-roboto-bold text-xl text-text-200'>Projects</span>
-                        <span className='block font-roboto-bold text-lg text-primary mt-2'>12</span>
+                        <span className='block font-roboto-bold text-lg text-primary mt-2'>{projects?.length || 0}</span>
                     </div>
                 </div>
             </div>
@@ -35,7 +35,7 @@ function Stats() {
                     <span className='flex justify-center items-center w-12 h-12 bg-primary text-white text-2xl rounded-md'><FaMessage /></span>
                     <div className="block">
                         <span className='block font-roboto-bold text-xl text-text-200'>New Messages</span>
-                        <span className='block font-roboto-bold text-lg text-primary mt-2'>3</span>
+                        <span className='block font-roboto-bold text-lg text-primary mt-2'>{messages?.length || 0}</span>
                     </div>
                 </div>
             </div>

@@ -1,6 +1,7 @@
 import React from 'react'
 
-function MessageActivity() {
+function MessageActivity({activities , messages}) {
+    const options = { hour: '2-digit', minute: '2-digit', hour12: true }
   return (
     <section className="admin_box text-primary">
         <div className="grid gap-4 sm:gird-cols-1 md:grid-cols-2
@@ -12,18 +13,16 @@ function MessageActivity() {
                     *:flex *:justify-between *:items-center *:bg-primary *:text-white *:p-3 *:rounded-sm *:mb-2
                     *:duration-300 *:hover:bg-primary/80
                 ">
-                    <li>
-                        <span>John Doe</span>
-                        <span>1 hours age</span>
+                    {messages.length > 0 ? (messages.map((message)=>(
+                    <li key={message._id}>
+                        <span>{message.name}</span>
+                        <span>{new Date(message.updatedAt).toLocaleString('en-us' , options)} hours ago</span>
                     </li>
-                    <li>
-                        <span>John Doe</span>
-                        <span>2 hours age</span>
-                    </li>
-                    <li>
-                        <span>John Doe</span>
-                        <span>4 hours age</span>
-                    </li>
+                    ))):
+                        (
+                            <span>There is no message.</span>
+                        )
+                    }
                     
                 </ul>
             </div>
@@ -33,18 +32,14 @@ function MessageActivity() {
                      *:flex *:justify-between *:items-center *:bg-primary *:text-white *:p-3 *:rounded-sm *:mb-2
                     *:duration-300 *:hover:bg-primary/80
                 ">
-                      <li>
-                        <span>New project added: E-commerce Website</span>
-                        <span>1 day ago</span>
+                    {activities.length > 0 ? (activities.map((activity)=>(
+                      <li key={activity._id}>
+                        <span>{activity.action}</span>
                     </li>
-                    <li>
-                        <span>Updated About page content</span>
-                        <span>2 day ago</span>
-                    </li>
-                    <li>
-                        <span>New resume version uploaded</span>
-                        <span>3 day ago</span>
-                    </li>
+
+                    ))) :(
+                         <span>There is no Activities.</span>
+                    )}
                 </ul>
             </div>
         </div>
