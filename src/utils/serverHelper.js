@@ -1,11 +1,11 @@
-const { cookies} = require('next/headers');
+const { cookies } = require('next/headers')
 const UserModel= require('@/models/User');
 const connectToDB = require('@/config/db');
 const {verifyRefreshToken} = require('@/src/utils/auth');
 
 const authUser  =  async ()=>{
     connectToDB();
-    const token = cookies().get("token");
+    const token = await cookies().get("token");
     let user = null;
     if(token){
         const tokenPayload = verifyRefreshToken(token.value);
@@ -17,7 +17,7 @@ const authUser  =  async ()=>{
 
 const authAdmin = async ()=>{
     connectToDB()
-    const token = cookies().get('token');
+    const token = await cookies().get('token')
     let user = null;
     if(token){
         const tokenPayload = verifyRefreshToken(token.value);
