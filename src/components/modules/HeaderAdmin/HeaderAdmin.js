@@ -6,9 +6,15 @@ import swal from 'sweetalert';
 
 function HeaderAdmin() {
 
-  const handlerExit = async (e)=>{
+  const handlerExit = (e)=>{
     e.preventDefault();
-    const res = await fetch('api/auth/signout',{
+    swal({
+      title:"Are you sure you want to go?",
+      icon:"warning",
+      buttons:["No","Yes"]
+    }).then(async (result)=>{
+      if(result){
+           const res = await fetch('api/auth/signout',{
       method:"POST"
     });
     if(res.status === 200){
@@ -20,6 +26,9 @@ function HeaderAdmin() {
         return redirect('/')
       })
     }
+      }
+    })
+ 
   }
 
   return (
