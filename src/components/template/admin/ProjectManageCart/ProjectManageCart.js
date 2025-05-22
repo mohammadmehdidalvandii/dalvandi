@@ -17,10 +17,9 @@ function ProjectManageCart({handlerShowEdit , image ,name ,description ,tags ,id
         }).then(async (result)=>{
             console.log("result",result)
             if(result){
-               const res = await fetch(`api/projects/delete/${projectID}`,{
-                method:"DELETE",
-                
-               })
+                const res = await fetch(`/api/projects/delete/${projectID}`,{
+                    method:"DELETE",
+                })
                 if(res.status === 200){
                     swal({
                         title:"removed project successfully",
