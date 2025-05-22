@@ -9,13 +9,11 @@ import swal from 'sweetalert';
 function ProjectManageCart({handlerShowEdit , image ,name ,description ,tags ,id }) {
     
     const handlerDeleteProject = (projectID)=>{
-        console.log(projectID)
         swal({
             title:`Are you sure delete project ${name} ?`,
             icon:"error",
             buttons:["No","Yes"]
         }).then(async (result)=>{
-            console.log("result",result)
             if(result){
                 const res = await fetch(`/api/projects/delete/${projectID}`,{
                     method:"DELETE",

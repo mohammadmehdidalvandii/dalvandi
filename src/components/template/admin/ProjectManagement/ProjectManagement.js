@@ -5,6 +5,13 @@ import ProjectManageCart from '../ProjectManageCart/ProjectManageCart'
 function ProjectManagement({projects}) {
   const [projectModel , setProjectModel] = useState(false);
    const [editProject , setEditProject] = useState(false); 
+   const [name , setName] = useState('')
+   const [description , setDescription] = useState('')
+   const [tags , setTags] = useState('')
+   const [projectURL , setProjectURL] = useState('')
+   const [image , setImage] = useState('')
+
+
 
   // Add Project 
   const handlerShowModel = ()=>{
@@ -12,6 +19,42 @@ function ProjectManagement({projects}) {
   }
   const handlerExitAddProject = ()=>{
     setProjectModel(false)
+  }
+
+  // Logic addProject
+  const handlerAddProject = async (e)=>{
+    e.preventDefault();
+    if(!name.trim() || !description.trim() || !tags.trim() || !projectURL.trim()){
+      swal({
+        title:"All values ​​are required.",
+        icon:"error",
+        button:"Try"
+      })
+    }
+    const formData = new FormData();
+    formData.append("name",name)
+    formData.append("description",description)
+    formData.append("tags",tags)
+    formData.append("projectURL",projectURL)
+    formData.append("image",image)
+    
+  
+
+    const res = await fetch('/api/projects', {
+      method:"POST",
+      body:formData
+    });
+
+    if(res.status === 201){
+      swal({
+        title:"Add project successfully",
+        icon:"success",
+        button:"Done"
+      }).then(()=>{
+        return window.location.reload()
+      })
+    }
+
   }
 
   // editProject  
@@ -60,29 +103,44 @@ function ProjectManagement({projects}) {
                 <form action="#" className="block mt-4">
                     <div className="form_group">
                             <label htmlFor="" className='form_label'>Project Name:</label>
-                            <input type="text" className='form_input'/>
+                            <input type="text" className='form_input'
+                            value={name}
+                            onChange={(e)=>setName(e.target.value)}
+                            />
                        </div>
                     <div className="form_group">
                             <label htmlFor="" className='form_label'>Description:</label>
-                            <textarea type="text" className='form_text'/>
+                            <textarea type="text" className='form_text'
+                            value={description}
+                            onChange={(e)=>setDescription(e.target.value)}
+                            />
                        </div>
                     <div className="form_group">
                             <label htmlFor="" className='form_label'>Image Project:</label>
-                            <input type="file" className='form_input'/>
+                            <input type="file" className='form_input' 
+                            onChange={(e)=>setImage(e.target.files[0])}
+                            />
                        </div>
                     <div className="form_group">
                             <label htmlFor="" className='form_label'>Tags (comma-separated)</label>
-                            <input type="text" className='form_input' placeholder='HTML,CSS,javascript'/>
+                            <input type="text" className='form_input' placeholder='HTML,CSS,javascript'
+                            value={tags}
+                            onChange={(e)=>setTags(e.target.value)}
+                            />
                        </div>
                     <div className="form_group">
                             <label htmlFor="" className='form_label'>Project URL:</label>
-                            <input type="text" className='form_input' placeholder='https://...'/>
+                            <input type="text" className='form_input' placeholder='https://...' 
+                              onChange={(e)=>setProjectURL(e.target.value)}
+                            />
                        </div>
                        <div className="flex gap-4 mt-4 flex-wrap *:cursor-pointer">
                         <button className='btn_cancel'
                         onClick={handlerExitAddProject}
                         >Cancel</button>
-                        <button className='btn_success'>Add Project</button>
+                        <button className='btn_success' 
+                        onClick={handlerAddProject}
+                        >Add Project</button>
                        </div>
                 </form>
               </div>
