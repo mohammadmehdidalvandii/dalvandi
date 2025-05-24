@@ -21,6 +21,15 @@ function ResumeManagement({works}) {
         if(resumeFile){
             formData.append("resumeFile" ,resumeFile);
         }
+
+        if(!resumeFile){
+            swal({
+                title:"Resume file is Required",
+                icon:"error",
+                buttons:"Try"
+            })
+        }
+
         const res = await fetch('/api/resume',{
             method:"POST",
             body:formData

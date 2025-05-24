@@ -18,6 +18,7 @@ export async function POST (req){
                     );
                 }
             
+                await ResumeModel.deleteMany();
 
         const formData = await req.formData();
         const resumeFile = formData.get('resumeFile');
