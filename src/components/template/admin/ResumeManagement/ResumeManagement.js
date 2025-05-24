@@ -12,6 +12,31 @@ function ResumeManagement({works}) {
     const [startDate , setStartDate] = useState('')
     const [endDate , setEndDate] = useState('')
     const [responsibilities , setResponsibilities] = useState('')
+    const [resumeFile ,  setResumeFile] = useState('');
+
+    // add upload resume file
+    const handleUploadResume = async (e) =>{
+        e.preventDefault();
+        const formData = new FormData();
+        if(resumeFile){
+            formData.append("resumeFile" ,resumeFile);
+        }
+        const res = await fetch('/api/resume',{
+            method:"POST",
+            body:formData
+        })
+        if(res.status ===201){
+            swal({
+                title:"Add Resume success",
+                buttons:"Done"
+            }).then(()=>{
+                setUploadResume(false);
+                window.location.reload();
+            })
+        }
+
+
+    }
 
     // Add Experience
     const handlerAddExperience = async (e)=>{
@@ -195,13 +220,17 @@ function ResumeManagement({works}) {
                 <form action="#" className="block mt-4">
                     <div className="form_group">
                             <label htmlFor="" className='form_label'>Resume File (PDF)</label>
-                            <input type="file" className='form_input'/>
+                            <input type="file" className='form_input'
+                            onChange={(e)=>setResumeFile(e.target.files[0])}
+                            />
                        </div>
                        <div className="flex gap-4 mt-4 flex-wrap *:cursor-pointer">
                         <button className='btn_cancel'
                         onClick={handlerExitResume}
                         >Cancel</button>
-                        <button className='btn_success w-[150px]'>Upload Resume</button>
+                        <button className='btn_success w-[150px]'
+                            onClick={handleUploadResume}
+                        >Upload Resume</button>
                        </div>
                 </form>
                 </div>
