@@ -1,11 +1,46 @@
+"use client"
 import Link from 'next/link';
-import React from 'react';
+import React, { useState } from 'react';
 import { FiMail } from "react-icons/fi";
 import { MdOutlinePhoneAndroid } from "react-icons/md";
-
+import swal from 'sweetalert';
 
 
 function Contact() {
+    const [name , setName] = useState('')
+    const [email , setEmail] = useState('')
+    const [subject , setSubject] = useState('')
+    const [message , setMessage] = useState('')
+
+
+    const handlerSendMessage = async (e)=>{
+        e.preventDefault()
+        if(!name.trim() || !email.trim() || !subject.trim() || !message.trim()){
+            swal({
+                title:"All felids is required",
+                icon:"success",
+                buttons:"Try"
+            });
+        };
+
+        const data ={name , email ,subject ,message}
+
+        const res = await fetch('/api/contact',{
+            method:"POST",
+            headers:{"Content-Type":"application/json"},
+            body:JSON.stringify(data)
+        });
+        if(res.status === 201){
+            swal({
+                title:"Message Send for admin",
+                icon:"success",
+                buttons:'Done'
+            }).then(()=>{
+                window.location.reload()
+            })
+        }
+    }
+
   return (
     <section className="block my-12">
         <div className="container">
@@ -33,21 +68,33 @@ function Contact() {
                     <form action="" className="block">
                         <div className="form_group">
                             <label htmlFor="" className='form_label'>Name:</label>
-                            <input type="text" className='form_input'/>
+                            <input type="text" className='form_input'
+                            value={name}
+                            onChange={(e)=>setName(e.target.value)}
+                            />
                         </div>
                         <div className="form_group">
                             <label htmlFor="" className='form_label'>Email:</label>
-                            <input type="text" className='form_input' />
+                            <input type="text" className='form_input' 
+                            value={email}
+                            onChange={(e)=>setEmail(e.target.value)}
+                            />
                         </div>
                         <div className="form_group">
                             <label htmlFor="" className='form_label'>Subject:</label>
-                            <input type="text" className='form_input' />
+                            <input type="text" className='form_input' 
+                            value={subject}
+                            onChange={(e)=>setSubject(e.target.value)}
+                            />
                         </div>
                         <div className="form_group">
                             <label htmlFor="" className='form_label'>Message:</label>
-                            <textarea rows={7} className='form_text' type="text" />
+                            <textarea rows={7} className='form_text' type="text" 
+                            value={message}
+                            onChange={(e)=>setMessage(e.target.value)}
+                            />
                         </div>
-                        <button className="btn_success">Send Message</button>
+                        <button className="btn_success cursor-pointer" onClick={handlerSendMessage}>Send Message</button>
                     </form>
                 </div>
             </div>

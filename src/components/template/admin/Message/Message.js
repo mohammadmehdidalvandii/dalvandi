@@ -52,7 +52,7 @@ function Message({messages}) {
             </div>
                     ))
             ) :(
-                                <span className='block text-center font-roboto-black text-xl text-red-600'>There is no Skills.</span>
+                                <span className='block text-center font-roboto-black text-xl text-red-600'>There is no Message.</span>
 
             )}
         </div>
