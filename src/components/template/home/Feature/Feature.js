@@ -2,7 +2,7 @@ import React from 'react'
 import Image from 'next/image'
 import Link from 'next/link'
 
-function Feature() {
+function Feature({resume}) {
   return (
     <section className="block">
         <div className="container my-16">
@@ -28,7 +28,7 @@ function Feature() {
                     <div className="block text-center my-8">
                         <h3 className="block mb-6 font-roboto-black text-2xl text-primary">Resume</h3>
                         <p className='block mb-6 text-text-100 text-md'>Download my complete resume</p>
-                        <Link href='/' className='block font-roboto-bold text-lg text-secondary-100 duration-300 hover:text-secondary-200 hover:underline' target='_blank' download>Download CV</Link>
+                        <Link href={resume} className='block font-roboto-bold text-lg text-secondary-100 duration-300 hover:text-secondary-200 hover:underline' target='_blank' download>Download CV</Link>
                     </div>
                 </div>
             </div>
