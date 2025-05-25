@@ -1,5 +1,5 @@
 const connectToDB = require("@/config/db");
-const ContactModel = require("@/models/Content");
+const MessageModel = require("@/models/Message");
 const { authUser } = require("@/src/utils/serverHelper");
 
 export async function DELETE(req, { params }) {
@@ -10,7 +10,7 @@ export async function DELETE(req, { params }) {
       return Response.json({ message: "Unauthorized" }, { status: 401 });
     }
 
-    const messageID = params?.id 
+    const messageID = await params.id 
 
     if(!messageID){
         return Response.json(
@@ -19,7 +19,7 @@ export async function DELETE(req, { params }) {
         )
     };
 
-    await ContactModel.findOneAndDelete({_id:messageID});
+    await MessageModel.findOneAndDelete({_id:messageID});
 
     return Response.json(
         {message:"Delete message by id is success"},

@@ -1,6 +1,8 @@
 import AdminLayout from '@/components/layout/AdminLayout'
 import Message from '@/components/template/admin/Message/Message'
 import React from 'react'
+import connectToDB from '@/config/db'
+import MessageModel from '@/models/Message';
 
 export const metadata = {
   title:"My Personal Website | Dashboard-Messages",
@@ -8,10 +10,12 @@ export const metadata = {
 }
 
 
-function page() {
+async function page() {
+  await connectToDB();
+  const messages = await MessageModel.find().sort({ createdAt: -1 }).lean();
   return (
     <AdminLayout>
-        <Message/>
+        <Message messages={JSON.parse(JSON.stringify(messages))}/>
     </AdminLayout>
   )
 }
