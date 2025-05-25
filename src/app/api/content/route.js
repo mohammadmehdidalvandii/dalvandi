@@ -15,6 +15,8 @@ export async function POST (req){
                     );
                 }
 
+        await ContentModel.deleteMany();    
+
         const body = await req.json();
         const {titleHomePage , descriptionHomePage , bioAboutPage , githubLink , linkedinLink , telegramLink} = body;
 
